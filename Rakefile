@@ -190,6 +190,8 @@ task :rubocop, :bundleupdate do |t, args|
   bundleupdate = args[:bundleupdate]
   Rake::Task["bundleupdate"].invoke if bundleupdate
   header "Running rubocop reports"
+  errors = []
+  tested_gems = valid_gems
   valid_gems.each do |gem|
     Dir.chdir gem do
       Bundler.with_clean_env do

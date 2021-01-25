@@ -13,7 +13,7 @@ AllCops:
 Documentation:
   Enabled: false
 
-Layout/AlignHash:
+Layout/HashAlignment:
   Enabled: false
 Metrics/ClassLength:
   Enabled: false
@@ -22,7 +22,7 @@ Naming/FileName:
     - "lib/google-cloud-spanner.rb"
 Naming/RescuedExceptionsVariableName:
   Enabled: false
-Naming/UncommunicativeMethodParamName:
+Naming/MethodParameterName:
   Enabled: false
 Style/EmptyMethod:
   Enabled: false

@@ -14,7 +14,7 @@ AllCops:
 Documentation:
   Enabled: false
 
-Layout/AlignHash:
+Layout/HashAlignment:
   Enabled: false
 Layout/SpaceInsideStringInterpolation:
   Enabled: false

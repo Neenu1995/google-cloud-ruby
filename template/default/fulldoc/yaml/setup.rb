@@ -20,7 +20,6 @@ def init
     rescue => e
       path = options.serializer.serialized_path(object)
       log.error "Exception occurred while generating '#{path}'"
-      puts object.type
       # require "pry"
       # binding.pry
       log.backtrace(e)
@@ -39,13 +38,17 @@ def serialize(object)
   #   require "pry"
   #   binding.pry
   # end
-  if object.type == :method
-    require "pry"
-    binding.pry
-  end
-  puts object.type
+  # if object.children.any? { |child| child.type == :method }
+  #   require "pry"
+  #   binding.pry
+  # end
+  # if object.path == "Google::Cloud::Vision::V1::ImageAnnotator::Client"
+  #   require "pry"
+  #   binding.pry
+  # end
 
-  file_name = "#{object.path}.yaml"
+  file_name = "#{object.path.gsub "::", "-"}.yaml"
+  # file_name.gsub "::", "-"
 
   Templates::Engine.with_serializer(file_name, options.serializer) do
     T('layout').run(options.merge(:item => object))

@@ -1,33 +1,4 @@
 ### YamlMime:UniversalReference
-api_name: []
 items:
-- children: <%=
-    children = ""
-    if @object.children.empty?
-      children = "[]"
-    else
-      @object.children.each do |child|
-        children += "\n  - #{child.path}"
-      end
-    end
-    children
-  %>
-  fullName: <%= @object.path %>
-  langs:
-  - ruby
-  module: <%= ENV["CLOUDRAD_GEM_NAME"] %>
-  name: <%= @object.name %>
-  source:
-    id: <%= @object.name %>
-    path: <%= @object.files.flatten.first %>
-    remote:
-      branch: HEAD
-      path: <%= "#{ENV['CLOUDRAD_GEM_NAME']}/#{@object.files.flatten.first}" %>
-    startLine: <%= @object.files.flatten[1] %>
-  summary: '<%= @object.docstring %>'
-<%= 
-  syntax = ""
-  if @object.type
-  end
-  syntax
-%>
+<%= @object_text + @method_text %>
+references: <%= @reference_text %>

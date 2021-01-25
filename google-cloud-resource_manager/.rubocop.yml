@@ -14,7 +14,7 @@ AllCops:
 Documentation:
   Enabled: false
 
-Layout/AlignHash:
+Layout/HashAlignment:
   Enabled: false
 Metrics/ClassLength:
   Enabled: false
